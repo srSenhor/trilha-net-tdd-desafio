@@ -16,32 +16,44 @@ namespace SimpleCalc.Services
 
         public int Add(int firstValue, int secondValue)
         {
-            return firstValue + secondValue;
+            int result = firstValue + secondValue;
+            _operationsHistory.Insert(0, $"{firstValue} + {secondValue} = {result}");
+            return result;
         }
 
         public double Add(double firstValue, double secondValue)
         {
-            return firstValue  + secondValue;
+            double result = firstValue + secondValue;
+            _operationsHistory.Insert(0, $"{firstValue} + {secondValue} = {result}");
+            return result;
         }
 
         public int Sub(int firstValue, int secondValue)
         {
-            return firstValue - secondValue;
+            int result = firstValue - secondValue;
+            _operationsHistory.Insert(0, $"{firstValue} - {secondValue} = {result}");
+            return result;
         }
 
         public double Sub(double firstValue, double secondValue)
         {
-            return firstValue - secondValue;
+            double result = firstValue - secondValue;
+            _operationsHistory.Insert(0, $"{firstValue} - {secondValue} = {result}");
+            return result;
         }
 
         public int Multiply(int firstValue, int secondValue)
         {
-            return firstValue * secondValue;
+            int result = firstValue * secondValue;
+            _operationsHistory.Insert(0, $"{firstValue} * {secondValue} = {result}");
+            return result;
         }
 
         public double Multiply(double firstValue, double secondValue)
         {
-            return firstValue * secondValue;
+            double result = firstValue * secondValue;
+            _operationsHistory.Insert(0, $"{firstValue} * {secondValue} = {result}");
+            return result;
         }
         
         public double Divide(int firstValue, int secondValue)
@@ -51,7 +63,9 @@ namespace SimpleCalc.Services
                 throw new DivideByZeroException();
             }
             
-            return firstValue / secondValue;
+            int result = firstValue / secondValue;
+            _operationsHistory.Insert(0, $"{firstValue} / {secondValue} = {result}");
+            return result;
         }
 
         public double Divide(double firstValue, double secondValue)
@@ -61,17 +75,28 @@ namespace SimpleCalc.Services
                 throw new DivideByZeroException();
             }
             
-            return firstValue / secondValue;
+            double result = firstValue / secondValue;
+            _operationsHistory.Insert(0, $"{firstValue} / {secondValue} = {result}");
+            return result;
         }
 
         public double Pow(double basis, double exponent)
         {
-            return Math.Pow(basis, exponent);
+            double result = Math.Pow(basis, exponent);
+            _operationsHistory.Insert(0, $"{basis} ** {exponent} = {result}");
+            return result;
         }
 
         public double Root(double value)
         {
-            return Math.Sqrt(value);
+            if (value < 0.0)
+            {
+                throw new ArithmeticException();
+            }
+
+            double result = Math.Sqrt(value);
+            _operationsHistory.Insert(0, $"sqrt({value}) = {result}");
+            return result;
         }
 
         public double Sin(int value)
@@ -91,7 +116,7 @@ namespace SimpleCalc.Services
 
         public List<string> History()
         {
-            return new List<string>();
+            return _operationsHistory.GetRange(0, 5);
         }
     }
 }
