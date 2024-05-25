@@ -26,17 +26,42 @@ namespace SimpleCalc.Services
 
         public int Sub(int firstValue, int secondValue)
         {
-            return 0;
+            return firstValue - secondValue;
+        }
+
+        public double Sub(double firstValue, double secondValue)
+        {
+            return firstValue - secondValue;
         }
 
         public int Multiply(int firstValue, int secondValue)
         {
-            return 0;
+            return firstValue * secondValue;
+        }
+
+        public double Multiply(double firstValue, double secondValue)
+        {
+            return firstValue * secondValue;
         }
         
         public int Divide(int firstValue, int secondValue)
         {
-            return 0;
+            if (secondValue == 0)
+            {
+                throw new DivideByZeroException();
+            }
+            
+            return firstValue / secondValue;
+        }
+
+        public double Divide(double firstValue, double secondValue)
+        {
+            if (secondValue == 0)
+            {
+                throw new DivideByZeroException();
+            }
+            
+            return firstValue / secondValue;
         }
 
         public int Pow(int basis, int exponent)
