@@ -64,12 +64,12 @@ namespace SimpleCalc.Services
             return firstValue / secondValue;
         }
 
-        public int Pow(int basis, int exponent)
+        public int Pow(double basis, double exponent)
         {
             return 0;
         }
 
-        public int Root(int value)
+        public int Root(double value)
         {
             return 0;
         }

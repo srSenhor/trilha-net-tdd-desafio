@@ -69,23 +69,23 @@ public class CalcFeatureTest
     [InlineData(2, 3, 8)]
     [InlineData(3, 4, 81)]
     [InlineData(5, 2, 25)]
-    public void Calculate_FirstValuePowerSecondValue_MustReturnExpectedNumber(int firstValue, int secondValue, int expectedResult)
+    public void Calculate_FirstValuePowerSecondValue_MustReturnExpectedNumber(double firstValue, double secondValue, double expectedResult)
     {
         // Arrange / Act
-        int result = _calc.Pow(basis: firstValue, exponent: secondValue);
+        double result = _calc.Pow(basis: firstValue, exponent: secondValue);
 
         // Assert
         Assert.Equal(expectedResult, result);
     }
 
     [Theory]
-    [InlineData(81, 9)]
-    [InlineData(25, 5)]
-    [InlineData(169, 13)]
-    public void Calculate_SquareRootOfTheValue_MustReturnExpectedNumber(int value, int expectedResult)
+    [InlineData(81.0, 9.0)]
+    [InlineData(25.0, 5.0)]
+    [InlineData(169.0, 13.0)]
+    public void Calculate_SquareRootOfTheValue_MustReturnExpectedNumber(double value, double expectedResult)
     {
         // Arrange / Act
-        int result = _calc.Root(value);
+        double result = _calc.Root(value);
 
         // Assert
         Assert.Equal(expectedResult, result);
