@@ -44,7 +44,7 @@ namespace SimpleCalc.Services
             return firstValue * secondValue;
         }
         
-        public int Divide(int firstValue, int secondValue)
+        public double Divide(int firstValue, int secondValue)
         {
             if (secondValue == 0)
             {
