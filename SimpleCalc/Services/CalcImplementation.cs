@@ -64,14 +64,14 @@ namespace SimpleCalc.Services
             return firstValue / secondValue;
         }
 
-        public int Pow(double basis, double exponent)
+        public double Pow(double basis, double exponent)
         {
-            return 0;
+            return Math.Pow(basis, exponent);
         }
 
-        public int Root(double value)
+        public double Root(double value)
         {
-            return 0;
+            return Math.Sqrt(value);
         }
 
         public double Sin(int value)
