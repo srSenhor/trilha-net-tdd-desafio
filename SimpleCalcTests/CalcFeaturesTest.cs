@@ -146,8 +146,16 @@ public class CalcFeatureTest
     [Fact]
     public void Show_OperationHistory_MustReturn5LastOperations()
     {
-        // Arrange / Act
+        // Arrange
+        _calc.Add(1, 1);
+        _calc.Add(1, 1);
+        _calc.Add(1, 1);
+        _calc.Add(1, 1);
+        _calc.Add(1, 1);
+        _calc.Add(1, 1);
+        // Act
         var history = _calc.History();
+
 
         // Assert
         Assert.NotEmpty(history);
