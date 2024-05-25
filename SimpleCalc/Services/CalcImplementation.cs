@@ -99,21 +99,6 @@ namespace SimpleCalc.Services
             return result;
         }
 
-        public double Sin(int value)
-        {
-            return 0.0;
-        }
-
-        public double Cos(int value)
-        {
-            return 0.0;
-        }
-
-        public double Tan(int value)
-        {
-            return 0.0;
-        }
-
         public List<string> History()
         {
             return _operationsHistory.GetRange(0, 5);
